@@ -1,18 +1,19 @@
-# Nueramarcos Fork of tinygrad
+# Nueramarcos/tinygrad
 
-This repository is a personal fork of [tinygrad/tinygrad](https://github.com/tinygrad/tinygrad).
+Personal fork of [tinygrad/tinygrad](https://github.com/tinygrad/tinygrad).
 
-## Quick start
+## Quick Start
 
 ```bash
 git clone https://github.com/Nueramarcos/tinygrad.git
 cd tinygrad
 pip install -e .
 
-# Basic smoke test
+# Smoke test
 python3 -c "
-from tinygrad import Device
-print('✅ Device.DEFAULT =', Device.DEFAULT)
+from tinygrad import Device, Tensor
+print('✅ Device:', Device.DEFAULT)
+print('✅ Tensor test:', Tensor([1,2,3]).sum().item())
 "
 ```
 
