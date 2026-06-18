@@ -8,7 +8,12 @@ This repository is a personal fork of [tinygrad/tinygrad](https://github.com/tin
 git clone https://github.com/Nueramarcos/tinygrad.git
 cd tinygrad
 pip install -e .
-PYTHON=1 python -m pytest test/test_dtype.py -q
+
+# Basic smoke test
+python3 -c "
+from tinygrad import Device
+print('✅ Device.DEFAULT =', Device.DEFAULT)
+"
 ```
 
 ## Notes
