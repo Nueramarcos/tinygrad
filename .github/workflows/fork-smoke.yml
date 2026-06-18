@@ -24,6 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -e .
         pip install pytest
+        pip install pytest
 
     - name: Run tests
-      run: PYTHON=1 python -m pytest test/test_dtype.py -q
+      run: python3 -m pytest test/ -q --tb=no
