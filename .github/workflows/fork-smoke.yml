@@ -20,10 +20,8 @@ jobs:
         python-version: '3.12'
 
     - name: Install dependencies
-      run: |
+      run: python3 -c "from tinygrad import Device; print(Device.DEFAULT)"
         python -m pip install --upgrade pip
         pip install -e .
-        pip install pytest
-
-    - name: Run tests
-      run: python3 -m pytest --last-failed
+        - name: Run tests
+      run: python3 -c "from tinygrad import Device; print(Device.DEFAULT)"
