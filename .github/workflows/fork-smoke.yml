@@ -2,27 +2,37 @@ name: Fork Smoke Test
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
 
 jobs:
-  build:
+  fork-smoke:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
-    - name: Set up Python 3.12
-      uses: actions/setup-python@v4
+    - name: Set up Python
+      uses: actions/setup-python@v2
       with:
-        python-version: '3.12'
+        python-version: '3.8'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -e .
+        pip install -r requirements.txt
 
-    - name: Run smoke test
-      run: python3 -c "from tinygrad import Device; print(Device.DEFAULT)"
+    - name: Run fork smoke test
+      id: run_fork_smoke_test
+      run: |
+        python tinygrad/ci.py 27773355347
+
+    - name: Upload log
+      uses: actions/upload-artifact@v2
+      with:
+        name: run_log
+        path: run_log.txt
