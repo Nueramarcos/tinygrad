@@ -19,6 +19,8 @@ tinygrad: For something between [PyTorch](https://github.com/pytorch/pytorch) an
 
 </h3>
 
+[![Fork](https://img.shields.io/badge/fork-Nueramarcos-lightgrey.svg)](FORK.md)
+[![Fork Smoke](https://github.com/Nueramarcos/tinygrad/actions/workflows/fork-smoke.yml/badge.svg)](https://github.com/Nueramarcos/tinygrad/actions/workflows/fork-smoke.yml)
 [![GitHub Repo stars](https://img.shields.io/github/stars/tinygrad/tinygrad)](https://github.com/tinygrad/tinygrad/stargazers)
 [![Unit Tests](https://github.com/tinygrad/tinygrad/actions/workflows/test.yml/badge.svg)](https://github.com/tinygrad/tinygrad/actions/workflows/test.yml)
 [![Discord](https://img.shields.io/discord/1068976834382925865)](https://discord.gg/ZjZadyC7PK)
